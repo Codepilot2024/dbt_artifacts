@@ -23,5 +23,6 @@ models:
         relation: '{{ target.type != "sqlserver" }}'
       +as_columnstore: False
 vars:
-  dbt_artifacts_schema: 
-  dbt_artifacts_database:
+  dbt_artifacts:
+    dbt_artifacts_schema: 
+    dbt_artifacts_database:
