@@ -14,8 +14,7 @@ vars:
 
 models:
   dbt_artifacts:
-    +schema: OS_PPA_CTL_OWNER
-    +materialized: view
+    +materialized: table
     +file_format: '{{ "delta" if target.name == "databricks" else "" }}'
     sources:
       +materialized: incremental
@@ -25,6 +24,4 @@ models:
         columns: '{{ target.name != "databricks" and target.type != "sqlserver" }}'
         relation: '{{ target.type != "sqlserver" }}'
       +as_columnstore: False
-    staging:
-      +schema: 'OS_PPA_CTL_OWNER'
 
