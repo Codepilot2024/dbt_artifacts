@@ -1,4 +1,7 @@
-/* Bigquery won't let us `where` without `from` so we use this workaround */
+{{ config(
+    schema=var('dbt_artifacts_schema'))
+}}
+    /* Bigquery won't let us `where` without `from` so we use this workaround */
 with
     dummy_cte as (
 
