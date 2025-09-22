@@ -8,7 +8,11 @@ clean-targets: # folders to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
   - "logs"
-
+vars:
+  dbt_artifacts:
+    dbt_artifacts_schema: 
+    dbt_artifacts_database:
+    
 models:
   dbt_artifacts:
     +materialized: view
@@ -22,7 +26,4 @@ models:
         columns: '{{ target.name != "databricks" and target.type != "sqlserver" }}'
         relation: '{{ target.type != "sqlserver" }}'
       +as_columnstore: False
-vars:
-  dbt_artifacts:
-    dbt_artifacts_schema: 
-    dbt_artifacts_database:
+
