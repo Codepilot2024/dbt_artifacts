@@ -9,7 +9,6 @@ clean-targets: # folders to be removed by `dbt clean`
   - "dbt_packages"
   - "logs"
 vars:
-  dbt_artifacts:
     dbt_artifacts_schema: 
     dbt_artifacts_database:
     
