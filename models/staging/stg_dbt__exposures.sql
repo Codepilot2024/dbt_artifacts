@@ -1,5 +1,6 @@
 {{ config(
-    schema=var('dbt_artifacts_schema'))
+    schema=var('dbt_artifacts_schema')
+    )
 }}
 with
     base as (
