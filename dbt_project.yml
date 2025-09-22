@@ -15,13 +15,9 @@ vars:
 models:
   dbt_artifacts:
     +materialized: view
-    +schema: "{{ var('dbt_artifacts_schema','default_schema') }}"
-    +database: "{{ var('dbt_artifacts_database','default_database') }}"
     +file_format: '{{ "delta" if target.name == "databricks" else "" }}'
     sources:
       +materialized: incremental
-      +schema: "{{ var('dbt_artifacts_schema','default_schema') }}"
-      +database: "{{ var('dbt_artifacts_database','default_database') }}"
       +full_refresh: false
       +persist_docs:
         # Databricks and SQL Server don't offer column-level support for persisting docs
