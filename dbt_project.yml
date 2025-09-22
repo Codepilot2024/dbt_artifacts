@@ -15,8 +15,8 @@ vars:
 models:
   dbt_artifacts:
     +materialized: view
-    +schema: "{{ var('dbt_artifacts_schema') }}"
-    +database: "{{ var('dbt_artifacts_database') }}"
+    +schema: "{{ var("dbt_artifacts_schema") }}"
+    +database: "{{ var("dbt_artifacts_database") }}"
     +file_format: '{{ "delta" if target.name == "databricks" else "" }}'
     sources:
       +materialized: incremental
