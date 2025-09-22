@@ -1,4 +1,7 @@
-with
+{{ config(
+    schema=var('dbt_artifacts_schema'))
+}}
+    with
     base as (select * from {{ ref("sources") }}),
     enhanced as (
 
