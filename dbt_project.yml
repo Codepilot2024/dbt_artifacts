@@ -24,4 +24,6 @@ models:
         columns: '{{ target.name != "databricks" and target.type != "sqlserver" }}'
         relation: '{{ target.type != "sqlserver" }}'
       +as_columnstore: False
+    staging:
+      +schema: 'OS_PPA_CTL_OWNER'
 
