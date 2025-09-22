@@ -14,8 +14,8 @@ vars:
 
 models:
   dbt_artifacts:
+    +schema: "OS_PPA_CTL_OWNER"
     +materialized: view
-    +schema: 'OS_PPA_CTL_OWNER'
     +file_format: '{{ "delta" if target.name == "databricks" else "" }}'
     sources:
       +materialized: incremental
